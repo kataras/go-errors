@@ -6,6 +6,11 @@ import (
 	"runtime"
 )
 
+const (
+	// Version of this package
+	Version = "0.0.1"
+)
+
 var (
 	// Prefix the error prefix, applies to each error's message
 	// defaults to Error:_
@@ -37,7 +42,7 @@ func (e Error) Error() string {
 
 // Format returns a formatted new error based on the arguments
 // it does NOT change the original error's message
-func (e Error) Format(a ...interface{}) error {
+func (e Error) Format(a ...interface{}) Error {
 	e.message = fmt.Sprintf(e.message, a...)
 	return e
 }
