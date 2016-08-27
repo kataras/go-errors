@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	// Version of this package
+	// Version current version number
 	Version = "0.0.1"
 )
 
