@@ -8,7 +8,7 @@ import (
 
 const (
 	// Version current version number
-	Version = "0.0.1"
+	Version = "0.0.2"
 )
 
 var (
@@ -22,7 +22,8 @@ var (
 
 // Error holds the error message, this message never really changes
 type Error struct {
-	message string
+	message  string
+	appended bool
 }
 
 // New creates and returns an Error with a pre-defined user output message
@@ -55,6 +56,7 @@ func (e Error) Append(format string, a ...interface{}) Error {
 		format += "\n"
 	}
 	e.message += fmt.Sprintf(format, a...)
+	e.appended = true
 	return e
 }
 
@@ -62,6 +64,11 @@ func (e Error) Append(format string, a ...interface{}) Error {
 // it does NOT change the original error's message
 func (e Error) AppendErr(err error) Error {
 	return e.Append(err.Error())
+}
+
+// IsAppended returns true if the Error instance is created using original's Error.Append/AppendErr func
+func (e Error) IsAppended() bool {
+	return e.appended
 }
 
 // Panic output the message and after panics
