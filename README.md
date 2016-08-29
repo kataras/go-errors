@@ -105,6 +105,20 @@ func anything() error {
 
 ```
 
+go-* packages
+------------
+
+| Name        | Description           
+| ------------------|:---------------------:|
+| [go-fs](https://github.com/kataras/go-fs)      | FileSystem utils and common net/http static files handlers  
+| [go-events](https://github.com/kataras/go-events) | EventEmmiter for Go
+| [go-websocket](https://github.com/kataras/go-errors) | A websocket server and ,optionally, client side lib  for Go
+| [go-ssh](https://github.com/kataras/go-ssh) | SSH Server, build ssh interfaces, remote commands and remote cli with ease
+| [go-gzipwriter](https://github.com/kataras/go-gzipwriter) | Write gzip data to a io.Writer
+| [go-mailer](https://github.com/kataras/go-mailer) | E-mail Sender, send rich mails with one call  
+| [rizla](https://github.com/kataras/rizla) | Monitor and live-reload of your Go App
+| [Q](https://github.com/kataras/q) | HTTP2 Web Framework, 100% compatible with net/http
+| [Iris](https://github.com/kataras/iris) | The fastest web framework. Built on top of fasthttp
 
 FAQ
 ------------
