@@ -14,7 +14,7 @@ Installation
 The only requirement is the [Go Programming Language](https://golang.org/dl).
 
 ```bash
-$ go get -u github.com/kataras/go-errors
+$ go get -u gopkg.in/kataras/go-errors.v0
 ```
 
 
@@ -26,7 +26,7 @@ Docs
 `New` receives a message format and creates a new Error. Message format, which is created with .New, is never changes.
 
 ```go
-import "github.com/kataras/go-errors"
+import "gopkg.in/kataras/go-errors.v0"
 
 var errUserAlreadyJoined = errors.New("User with username: %s was already joined in this room!")
 ```
@@ -37,7 +37,7 @@ var errUserAlreadyJoined = errors.New("User with username: %s was already joined
 
 
 ```go
-import "github.com/kataras/go-errors"
+import "gopkg.in/kataras/go-errors.v0"
 
 var errUserAlreadyJoined = errors.New("User with username: %s was already joined in this room!")
 
@@ -55,7 +55,7 @@ func anything() error {
 `Append` and `AppendErr` adds a message to existing message and returns a new error.
 
 ```go
-import "github.com/kataras/go-errors"
+import "gopkg.in/kataras/go-errors.v0"
 
 var errUserAlreadyJoined = errors.New("User with username: %s was already joined in this room!")
 
@@ -68,7 +68,7 @@ func anything() error {
 }
 ```
 ```go
-import "github.com/kataras/go-errors"
+import "gopkg.in/kataras/go-errors.v0"
 
 var errUserAlreadyJoined = errors.New("User with username: %s was already joined in this room!")
 var errSpecifyOtherRoom  = errors.New("Please specify other room.")
@@ -87,7 +87,7 @@ Use `AppendErr` with go standard error type
 
 ```go
 import (
-  "github.com/kataras/go-errors"
+  "gopkg.in/kataras/go-errors.v0"
   "fmt"
 )
 
