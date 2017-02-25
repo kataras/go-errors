@@ -24,8 +24,8 @@ func ExampleError() {
 	// second output second and third Output lines
 
 	// Output:
-	// Error: User with mail: user1@mail.go already exists
-	// Error: User with mail: user1@mail.go already exists
+	// error: User with mail: user1@mail.go already exists
+	// error: User with mail: user1@mail.go already exists
 	// Please change your mail addr
 }
 
@@ -35,7 +35,7 @@ func do(method string, testErr *Error, expectingMsg string, t *testing.T) {
 	}()
 
 	if formattedErr.Error() != expectingMsg {
-		t.Fatalf("Error %s failed, expected:\n%s got:\n%s", method, expectingMsg, formattedErr.Error())
+		t.Fatalf("error %s failed, expected:\n%s got:\n%s", method, expectingMsg, formattedErr.Error())
 	}
 }
 
@@ -46,7 +46,7 @@ func TestFormat(t *testing.T) {
 
 func TestAppendErr(t *testing.T) {
 	NewLine = true
-	Prefix = "Error: "
+	Prefix = "error: "
 
 	errChangeMailMsg := "Please change your mail addr"
 	errChangeMail := fmt.Errorf(errChangeMailMsg)                                                           // test go standard error
@@ -57,7 +57,7 @@ func TestAppendErr(t *testing.T) {
 
 func TestAppendError(t *testing.T) {
 	NewLine = true
-	Prefix = "Error: "
+	Prefix = "error: "
 
 	errChangeMailMsg := "Please change your mail addr"
 	errChangeMail := New(errChangeMailMsg)                                                                       // test Error struct
@@ -68,7 +68,7 @@ func TestAppendError(t *testing.T) {
 
 func TestAppend(t *testing.T) {
 	NewLine = true
-	Prefix = "Error: "
+	Prefix = "error: "
 
 	errChangeMailMsg := "Please change your mail addr"
 	expectedErrorMessage := errUserAlreadyExists.Format(userMail).Error() + errChangeMailMsg + getNewLine() // first Prefix and last newline lives inside do
