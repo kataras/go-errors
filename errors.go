@@ -8,13 +8,13 @@ import (
 
 const (
 	// Version current version number
-	Version = "0.0.3"
+	Version = "0.0.4"
 )
 
 var (
 	// Prefix the error prefix, applies to each error's message
-	// defaults to Error:_
-	Prefix = "Error: "
+	// defaults to error:_
+	Prefix = "error: "
 	// NewLine adds a new line to the end of each error's message
 	// defaults to true
 	NewLine = true
@@ -89,7 +89,7 @@ func (e Error) With(err error) error {
 func (e Error) Panic() {
 	_, fn, line, _ := runtime.Caller(1)
 	errMsg := e.message
-	errMsg = "\nCaller was: " + fmt.Sprintf("%s:%d", fn, line)
+	errMsg += "\nCaller was: " + fmt.Sprintf("%s:%d", fn, line)
 	panic(errMsg)
 }
 
@@ -97,6 +97,6 @@ func (e Error) Panic() {
 func (e Error) Panicf(args ...interface{}) {
 	_, fn, line, _ := runtime.Caller(1)
 	errMsg := e.Format(args...).Error()
-	errMsg = "\nCaller was: " + fmt.Sprintf("%s:%d", fn, line)
+	errMsg += "\nCaller was: " + fmt.Sprintf("%s:%d", fn, line)
 	panic(errMsg)
 }
