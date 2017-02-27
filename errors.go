@@ -1,4 +1,4 @@
-// Package errors helps you to write and design your own pre-defined errors, useful when you have a known list of errors
+// Package go-errors helps you to write and design your own pre-defined errors, useful when you have a known list of errors
 package errors
 
 import (
